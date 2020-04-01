@@ -1,7 +1,7 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
-This is the code accompanying the CVPR2020 paper: Symmetry and Group in Attribute-Object Compositions. [[arXiv](url)]
+This is the code accompanying the CVPR2020 paper: Symmetry and Group in Attribute-Object Compositions. [[arXiv](url)](Coming soon)
 
 *Yong-Lu Li, Yue Xu, Xiaohan Mao, Cewu Lu*
 
@@ -29,7 +29,7 @@ If you find this repository useful for you, please consider citing our paper.
 
 	python utils/dataset/GCZSL_dataset.py [MIT/UT]
 
-Pretrained models and intermediate results can be downloaded from [here](url). Please unzip the `obj_scores.tar` to `./data/obj_scores` and `weights.tar` to `./weights`.
+Pretrained models and intermediate results can be downloaded from [here](url)(Coming soon). Please unzip the `obj_scores.tar` to `./data/obj_scores` and `weights.tar` to `./weights`.
 
 
 ## Compositional Zero-shot Leaning (CZSL)
