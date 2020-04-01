@@ -1,0 +1,12 @@
+weights
+logs
+data/mit*
+data/ut*
+data/obj_scores
+data/tmp
+
+*.pyc
+*__pycache__
+
+.ipynb_checkpoints/
+.vscode/
