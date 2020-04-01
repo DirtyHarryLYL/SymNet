@@ -1,7 +1,7 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
-This is the code accompanying the CVPR2020 paper: Symmetry and Group in Attribute-Object Compositions. [[Arxiv](url)]
+This is the code accompanying the CVPR2020 paper: Symmetry and Group in Attribute-Object Compositions. [[arXiv](url)]
 
 *Yong-Lu Li, Yue Xu, Xiaohan Mao, Cewu Lu*
 
@@ -9,7 +9,11 @@ This is the code accompanying the CVPR2020 paper: Symmetry and Group in Attribut
 
 If you find this repository useful for you, please consider citing our paper.
 
-	@article{
+	@inproceedings{li2020symmetry,
+	title={Symmetry and Group in Attribute-Object Compositions},
+	author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
+	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+	year={2020}
 	}
 
 
