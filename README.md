@@ -9,11 +9,11 @@ This is the code accompanying the CVPR2020 paper: **Symmetry and Group in Attrib
 
 If you find this repository useful for you, please consider citing our paper.
 
-	@inproceedings{li2020symmetry,
-	title={Symmetry and Group in Attribute-Object Compositions},
-	author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
-	booktitle={CVPR},
-	year={2020}
+	@article{li2020symmetry,
+  	title={Symmetry and Group in Attribute-Object Compositions},
+  	author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
+  	journal={arXiv preprint arXiv:2004.00587},
+  	year={2020}
 	}
 
 
