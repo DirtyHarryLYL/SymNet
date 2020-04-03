@@ -66,6 +66,22 @@ To train a SymNet with the hyper-parameters in our paper, run:
 
 
 
+Method | MIT (top-1) | MIT (top-2) |MIT (top-2) | UT (top-1) | UT (top-2) | UT (top-3)  
+-- | -- | -- | -- | -- | -- | -- |
+Visual Product  | 9.8/13.9 | 16.1 | 20.6 | 49.9 | / | / 
+LabelEmbed (LE) | 11.2/13.4| 17.6 | 22.4 | 25.8 | / | / 
+~- LEOR            | 4.5          | 6.2  | 11.8 |  /       | / | / 
+~- LE + R          | 9.3          | 16.3 | 20.8 |  /       | / | / 
+~- LabelEmbed+    | 14.8*         |  /   |  /   | 37.4| / | / 
+AnalogousAttr | 1.4          |  /   |  /   | 18.3  |  /  |  /  
+Red Wine        | 13.1         | 21.2 | 27.6 | 40.3  |  /  |  /   
+AttOperator    | 14.2         | 19.6 | 25.1 | 46.2  | 56.6 | 69.2 
+TAFE-Net           | 16.4         | 26.4 | 33.0 | 33.2  |  /  |  /  
+GenModel       | 17.8         |  /   |  /   | 48.3  |  /  |  /  
+**SymNet (Ours)** | **19.9** | **28.2** | **33.8** | **52.1**  |**67.8** |  **76.0** 
+
+
+
 ## Generalized Compositional Zero-shot Leaning (GCZSL)
 
 These are commands for the split and evaluation metrics introduced by [2].
@@ -91,6 +107,15 @@ To train a SymNet with the hyper-parameters in our paper, run:
 	python test_symnet_gczsl.py --data MITg --name MITg_best --epoch 380 --obj_pred MITg_obj_val_ep605.pkl --batchnorm --test_set val --topk 1
 	python test_symnet_gczsl.py --data MITg --name MITg_best --epoch 380 --obj_pred MITg_obj_test_ep605.pkl --batchnorm --test_set test --topk 1
 
+
+Model | Val Top-1 AUC | Val Top-2 AUC | Val Top-3 AUC | Test Top-1 AUC | Test Top-2 AUC | Test Top-3 AUC | Seen | Unseen | HM
+-- | -- | -- | -- | -- | -- | -- | -- | -- | --
+AttOperator  | 2.5 | 6.2 | 10.1 | 1.6 | 4.7 | 7.6 | 14.3    | 17.4 | 9.9 
+Red Wine      | 2.9 | 7.3 | 11.8 | 2.4 | 5.7 | 9.3 | 20.7    | 17.9 | 11.6
+LabelEmbed+  | 3.0 | 7.6 | 12.2 | 2.0 | 5.6 | 9.4 | 15.0    | 20.1 | 10.7
+GenModel     | 3.1 | 6.9 | 10.5 | 2.3 | 5.7 | 8.8 | **24.8**    | 13.4 | 11.2
+TMN               | 3.5 | 8.1 | 12.4 | 2.9 | 7.1 | 11.5| 20.2    | 20.1 | 13.0
+**SymNet (Ours)** | **4.3** | **9.8** | **14.8** | **3.0** | **7.6** | **12.3** | 24.4 | **25.2** | **16.1**
 
 
 ## Acknowledgement
