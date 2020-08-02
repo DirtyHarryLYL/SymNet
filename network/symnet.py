@@ -276,7 +276,7 @@ class Network(BaseNetwork):
                 pos_aA_rB = self.transformer(pos_aA, neg_attr_emb, 
                     is_training=True, name='DeCoN')
                 pos_rB_aA = self.transformer(pos_rB, pos_attr_emb, 
-                    is_training=True, name='DeCoN')
+                    is_training=True, name='CoN')
                 loss_com = self.MSELoss(pos_aA_rB, pos_rB_aA)
 
 
