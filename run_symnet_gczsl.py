@@ -136,7 +136,6 @@ class SolverWrapper(CZSLSolverWrapper):
                             summary.value.add(tag="%s/%s"%(key,k), simple_value=v)
                     writer.add_summary(summary, epoch)
 
-                assert not self.args.auto_stop
 
 
             if epoch % self.args.snapshot_freq == 0:
@@ -187,6 +186,45 @@ class SolverWrapper(CZSLSolverWrapper):
             i for i in range(len(attr_truth))
             if pairs[i] not in evaluator.train_pairs
         ])
+
+
+
+
+        # bias=0, for Causal-CZSl eval
+        
+        accuracies = []
+        bias = 0
+        args.bias = bias
+        results = evaluator.score_model(
+            all_pred_dict, all_obj_lab, bias=args.bias)
+        match_stats = evaluator.evaluate_predictions(
+            results, all_attr_lab, all_obj_lab, topk=args.topk)
+        accuracies.append(match_stats)
+        accuracies = zip(*accuracies)
+        accuracies = list(map(torch.mean, map(torch.cat, accuracies)))
+        attr_acc, obj_acc, closed_acc, open_acc, objoracle_acc, open_seen_acc, open_unseen_acc = accuracies
+        print(
+            '(val-causal) E:%d|A:%.3f|O:%.3f|Cl:%.3f|Op:%.4f|OpHM:%.4f|OpAvg:%.4f|OpSeen:%.4f|OpUnseen:%.4f|OrO:%.4f|maP:%.4f|bias:%.3f'
+            % (
+                epoch,
+                attr_acc,
+                obj_acc,
+                closed_acc,
+                open_acc,
+                (open_seen_acc * open_unseen_acc)**0.5,
+                0.5 * (open_seen_acc + open_unseen_acc),
+                open_seen_acc,
+                open_unseen_acc,
+                objoracle_acc,
+                0,
+                bias,
+            ))
+        # end
+
+
+
+
+
 
         accuracies = []
         bias = 1e3
