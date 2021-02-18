@@ -1,10 +1,6 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
-<p align='center'>
-    <img src="https://github.com/DirtyHarryLYL/SymNet/blob/master/data/symnet-overview.PNG", height="400">
-</p>
-
 #### **News**: (2021.2.7) Upgraded [HAKE-Activity2Vec](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/Activity2Vec) is released! Images/Videos --> human box + ID + skeleton + part states + action + representation. [[Description]](https://drive.google.com/file/d/1iZ57hKjus2lKbv1MAB-TLFrChSoWGD5e/view?usp=sharing), Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1)
 
 (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
