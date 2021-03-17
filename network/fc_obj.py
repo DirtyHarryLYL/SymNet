@@ -86,3 +86,11 @@ class Network(BaseNetwork):
 
         return summary
 
+    def test_step_no_postprocess(self, sess, blobs, score_op):
+        score = sess.run(
+            score_op,
+            feed_dict={
+                self.pos_image_feat: blobs[4],
+            })
+
+        return score

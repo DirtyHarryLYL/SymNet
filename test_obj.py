@@ -109,7 +109,7 @@ class SolverWrapper(BaseSolver):
         obj_truth = []
 
         for image_ind, batch in tqdm.tqdm(enumerate(self.test_dataloader), total=len(self.test_dataloader), postfix='test'):
-            pred = self.network.test_step(sess, batch, prob_op, no_postprocess=True)
+            pred = self.network.test_step_no_postprocess(sess, batch, prob_op)
             predictions.append(pred)
             obj_truth.append(batch[2])
 
