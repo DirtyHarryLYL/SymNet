@@ -150,6 +150,23 @@ CAUSAL     | **28.0** | 37.0 | **30.6** | 58.6 | 26.4
 **SymNet (Ours)** | 10.3 | **56.3** | 24.1 | 58.7 | **26.8**
 
 
+## Tips
+
+### Use Customized Dataset
+
+Take UT as example, beside reorganizing the images to `data/ut-zap50k-original/images/[attribute]_[object]/`:
+
+- If you are using customized pairs composed by our provided attributes and objects, only the pair lists in `data/ut-zap50k-original/compositional-split/` need to be updated.
+
+- If you also use customized attributes and objects, there are several additional files to modify in folder `utils/aux_data/`:
+
+  1. `UT_attrs.json` and `UT_objs.json` are attribute and object list, stored as `dict`. The keys are original names and values are names in pre-trained GloVe vocabs.
+
+  2. `glove_UT.py` contains GloVe vectors for the attributes and objects. In our paper, `glove.6B.300d.txt` is used.
+
+  3. `UT_weight.py` contains loss weights for each individual attribute or object class (only `attr_weight` and `obj_weight`) (`pair_weight` is never used and can be set to 1). In practice, these weights can help the training on imbalanced data. Each weight is computed by **-log(p)**, where **p** is the occurrence frequency of an attribute or object in train set. E.g. a five-image dataset have attribute labels `[a,a,a,b,b]`, then the `attr_weight` for `a` and `b` is `[-log0.6, -log0.4]`. You may clip the values to prevent large or zero weights.
+
+
 ## Acknowledgement
 The dataloader and evaluation code are based on [Attributes as Operators](https://github.com/Tushar-N/attributes-as-operators)<sup>[1]</sup> and [Task-Driven Modular Networks](https://github.com/facebookresearch/taskmodularnets)<sup>[2]</sup>.
 
