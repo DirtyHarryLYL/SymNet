@@ -168,7 +168,7 @@ Take UT as example, beside reorganizing the images to `data/ut-zap50k-original/i
 
 
 ## TODO
-- [ ] New Troch backbone
+- [ ] Unified backbone
 - [ ] Tips for hyperparameters and tuning
 - [ ] Some possible tricks
 - [ ] Torch version
