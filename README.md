@@ -171,6 +171,7 @@ Take UT as example, beside reorganizing the images to `data/ut-zap50k-original/i
 - [ ] Unified backbone
 - [ ] Tips for hyperparameters and tuning
 - [ ] Some possible tricks
+- [ ] New module for multi-label attribute recognition
 - [ ] Torch version
 
 
