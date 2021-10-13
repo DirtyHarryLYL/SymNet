@@ -5,11 +5,11 @@ As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
 (2021.2.7) Upgraded [HAKE-Activity2Vec](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/Activity2Vec) is released! Images/Videos --> human box + ID + skeleton + part states + action + representation. [[Description]](https://drive.google.com/file/d/1iZ57hKjus2lKbv1MAB-TLFrChSoWGD5e/view?usp=sharing), Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1), [[bilibili]](https://www.bilibili.com/video/BV1s54y1Y76s)
 
-(2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
+<!-- (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released! -->
 
 (2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!
 
-This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [[arXiv]](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [[arXiv]](https://arxiv.org/abs/2110.04603)
+This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [[CVPR arXiv]](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [[TPAMI arXiv]](https://arxiv.org/abs/2110.04603)
 
 *[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
 
