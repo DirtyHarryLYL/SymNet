@@ -9,7 +9,7 @@ As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
 (2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!
 
-This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [[CVPR arXiv]](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [[TPAMI arXiv]](https://arxiv.org/abs/2110.04603)
+This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2110.04603)
 
 *[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
 
