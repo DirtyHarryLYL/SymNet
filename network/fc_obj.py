@@ -21,6 +21,8 @@ class Network(BaseNetwork):
 
         self.pos_obj_id   = tf.placeholder(tf.int32, shape=[None])
         self.pos_image_feat = tf.placeholder(tf.float32, shape=[None, self.feat_dim])
+        self.test_attr_id   = tf.placeholder(tf.int32, shape=[None], name='test_attr_id')
+        self.test_obj_id    = tf.placeholder(tf.int32, shape=[None], name='test_obj_id')
         self.lr = tf.placeholder(tf.float32)
     
 
