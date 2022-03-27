@@ -31,7 +31,7 @@ def make_parser():
     parser.add_argument("--name", type=str, required=True, 
         help="Experiment name")
     parser.add_argument("--data", type=str, required=True,
-        choices=['MIT','UT','MITg','UTg'],
+        choices=['MIT','UT','MITg','UTg','APY','SUN'],
         help="Dataset name")
     parser.add_argument("--network", type=str, default='symnet', 
         help="Network name (the file name in `network` folder, but without suffix `.py`)")

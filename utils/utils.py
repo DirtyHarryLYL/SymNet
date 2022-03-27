@@ -47,7 +47,10 @@ def duplication_check(args):
 
 def formated_czsl_result(report):
     fstr = '[{name}/{epoch}] rA:{real_attr_acc:.4f}|rO:{real_obj_acc:.4f}|Cl/T1:{top1_acc:.4f}|T2:{top2_acc:.4f}|T3:{top3_acc:.4f}'
+    return fstr.format(**report)
 
+def formated_multi_result(report):
+    fstr = '[{name}/{epoch}] mAUC:{mAUC:.4f} | mAP:{mAP:.4f}'
     return fstr.format(**report)
 
 

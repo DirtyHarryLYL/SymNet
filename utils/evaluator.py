@@ -8,6 +8,7 @@ import itertools
 import math
 import collections
 import logging
+import sklearn.metrics as sklmetric
 
 
 class CZSL_Evaluator:
@@ -278,3 +279,39 @@ class GCZSL_Evaluator:
                 obj_truth == predictions['object_oracle'][1][:, 0]).float()
 
         return attr_match, obj_match, closed_match, open_match, obj_oracle_match, open_seen_match, open_unseen_match
+
+
+
+class Multi_Evaluator:
+    def __call__(self, prediction, gt_attr):
+        assert prediction.shape == gt_attr.shape
+        assert not np.any(np.isnan(prediction)), str(np.sum(np.isnan(prediction)))
+        assert not np.any(np.isnan(gt_attr)), str(np.sum(np.isnan(gt_attr)))
+
+        def calc_ap_auc(truth, scores):
+            if np.sum(truth > 0) > 0:
+                a = sklmetric.average_precision_score(truth, scores)
+                b = sklmetric.roc_auc_score(truth, scores)
+                assert not (np.isnan(a) or np.isnan(b))
+                return a,b
+            else:
+                return np.nan,np.nan
+
+        ap = np.zeros((gt_attr.shape[1],))
+        auc = np.zeros((gt_attr.shape[1],))
+
+        for dim in range(gt_attr.shape[1]):
+            # rescale ground truth to [-1, 1]
+
+            gt = gt_attr[:, dim]
+            mask = (gt >= 0)
+
+            gt = 2 * gt[mask] - 1  # = 0.5 threshold
+            est = prediction[mask, dim]
+
+            ap[dim],auc[dim] = calc_ap_auc(gt, est)
+
+        mAP = np.nanmean(ap)
+        mAUC = np.nanmean(auc)
+        
+        return mAP,mAUC

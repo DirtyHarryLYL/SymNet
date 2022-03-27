@@ -25,10 +25,10 @@ class BaseNetwork(object):
         self.dropout = args.dropout
         
 
-        if self.args.loss_class_weight:
+        if self.args.loss_class_weight and self.args.data not in ['SUN','APY']:
             from utils.aux_data import load_loss_weight
-
             self.num_pair = len(dataloader.dataset.pairs)
+            
             attr_weight, obj_weight, pair_weight = load_loss_weight(self.args.data)
             self.attr_weight = np.array(attr_weight, dtype=np.float32)
             self.obj_weight  = np.array(obj_weight, dtype=np.float32)
@@ -155,15 +155,35 @@ class BaseNetwork(object):
     def MSELoss(self, a, b):
         return tf.reduce_mean(self.distance_metric(a, b))
 
-    #def L2distance(self, a, b):
-    #    return self.distance_metric(a, b)
+    def carlibration_look_up(self, prob, transform_attr_onehot, gt=1, margin = 0.05):
+        if gt == 1:
+            prob_label_vec = self.att_sim
+        elif gt == 0:
+            prob_label_vec = 1 - self.att_sim
+        else:
+            raise ValueError(gt)
+        if np.any(prob_label_vec < 0):
+            prob_label_vec = prob_label_vec * 0.5 + 0.5
+        carlib_prob = tf.matmul(transform_attr_onehot, tf.cast(prob_label_vec, dtype=tf.float32))
+        prob_diff = tf.abs(prob - carlib_prob)
+        loss = tf.maximum(0., prob_diff - margin)
+        loss = tf.reduce_mean(tf.reduce_sum(loss, axis=1))
+        return loss
 
-    def triplet_margin_loss(self, anchor, positive, negative):
-        dist = self.distance_metric(anchor, positive) - self.distance_metric(anchor, negative) + self.args.triplet_margin
+    def triplet_margin_loss(self, anchor, positive, negative, weight=None, margin=None):
+        d1 = self.distance_metric(anchor,positive)
+        d2 = self.distance_metric(anchor, negative)
+        return self.triplet_margin_loss_with_distance(d1, d2, weight, margin)
+
+
+    def triplet_margin_loss_with_distance(self, d1, d2, weight=None, margin=None):
+        if margin is None:
+            margin = self.args.triplet_margin
+        if weight is None:
+            dist = d1 - d2 + margin
+        else:
+            dist = weight * (d1 - d2) + margin
         return tf.maximum(dist, 0)
-
-
-
     
     def test_step(self, sess, blobs, score_op):
         dset = self.dataloader.dataset

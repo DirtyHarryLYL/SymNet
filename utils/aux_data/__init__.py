@@ -22,10 +22,13 @@ def load_loss_weight(dataset_name):
 def load_wordvec_dict(dataset_name, vec_type):
     if dataset_name[-1]=='g':
         dataset_name = dataset_name[:-1]
-        
     try:
         Wordvec = importlib.import_module('utils.aux_data.%s_%s'%(vec_type, dataset_name))
-        return Wordvec.attrs_dict, Wordvec.objs_dict
-
     except ImportError:
         raise NotImplementedError("%s vector for %s is not ready yet"%(vec_type, dataset_name))
+
+
+    if hasattr(Wordvec,'objs_dict'):
+        return Wordvec.attrs_dict, Wordvec.objs_dict
+    else:
+        return Wordvec.attrs_dict

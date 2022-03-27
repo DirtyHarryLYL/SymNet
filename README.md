@@ -7,9 +7,13 @@ As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
 **(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!**
 
-This is the code accompanying the CVPR2020 paper: **Symmetry and Group in Attribute-Object Compositions**. [[arXiv](https://arxiv.org/abs/2004.00587)]
+This is the code accompanying following papers: 
 
+**Symmetry and Group in Attribute-Object Compositions**. [[arXiv](https://arxiv.org/abs/2004.00587)]
 *[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
+
+**Learning Single/Multi-Attribute of Object with Symmetry and Group**. [[arXiv](https://arxiv.org/abs/2110.04603)]
+*[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), [Xinyu Xu](https://xuxinyu.website) ,Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
 
 ![Overview](./data/overview.png)
 
@@ -20,6 +24,14 @@ If you find this repository useful for you, please consider citing our paper.
 		author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
 		booktitle={CVPR},
 		year={2020}
+	}
+	@ARTICLE{li2021learning,
+		author={Li, Yong-Lu and Xu, Yue and Xu, Xinyu and Mao, Xiaohan and Lu, Cewu},
+		journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+		title={Learning Single/Multi-Attribute of Object with Symmetry and Group}, 
+		year={2021},
+		pages={1-1},
+		doi={10.1109/TPAMI.2021.3119406}
 	}
 
 
@@ -34,6 +46,10 @@ If you find this repository useful for you, please consider citing our paper.
 **Features and pretrained models**: Features for compositional ZSL (CZSL) setting<sup>[1]</sup> will be downloaded together with the datasets. Features for generalized compositional ZSL (GCZSL) setting<sup>[2]</sup> can be extracted using:
 
 	python utils/dataset/GCZSL_dataset.py [MIT/UT]
+
+
+For multiple attribute recognition, we re-organize the metadata of aPY/SUN datasets with pre-extracted ResNet-50 feature in 4 files `{APY/SUN}_{train/test}.pkl`.
+You can download them from [Link](https://drive.google.com/drive/folders/1qcgAeEeXakX3-RsFM3pKfKsj7F18XBHA?usp=sharing) and put them into `./data` folder.
 
 Pretrained models and intermediate results can be downloaded from here: [Link](https://drive.google.com/drive/folders/1qcgAeEeXakX3-RsFM3pKfKsj7F18XBHA?usp=sharing). Please unzip the `obj_scores.zip` to `./data/obj_scores` and `weights.zip` to `./weights`.
 
@@ -148,6 +164,40 @@ AttOperator | 25.5 | 37.9 | 27.9 | 54.0 | 22.1
 TMN        | 10.3 | 54.3 | 17.4 | **62.0** | 25.4
 CAUSAL     | **28.0** | 37.0 | **30.6** | 58.6 | 26.4
 **SymNet (Ours)** | 10.3 | **56.3** | 24.1 | 58.7 | **26.8**
+
+
+## Multiple Attribute Recognition
+
+
+### Trainig a SymNet
+To train a SymNet for multiple attribute recognition, run:
+
+	python run_symnet_multi.py --name APY_best --data APY --rmd_metric sigmoid --fc_compress 256 --rep_dim 128  --test_freq 1  --epoch 100 --batchnorm --lr 3e-3 --bz 128 --lambda_cls_attr 1 --lambda_trip 1 --lambda_sym 5e-2 --bce_neg_weight 0.05 --lambda_cls_obj 5e-2 --lambda_axiom 1e-3  --lambda_multi_rmd 5e-2  --lambda_atten 1
+
+	python run_symnet_multi.py --name SUN_best --data SUN --rmd_metric rmd --fc_compress 1536 --rep_dim 128 --test_freq 5 --epoch 150 --batchnorm --lr 5e-3 --bz 128  --lambda_cls_attr 1 --lambda_trip 5e-2 --lambda_sym 8e-3 --bce_neg_weight 0.4 --lambda_cls_obj 3e-1 --lambda_axiom 1e-3 --lambda_multi_rmd 6e-2 --lambda_atten 6e-1
+
+
+### Model Evaluation
+	
+	python test_symnet_multi.py --data APY --name APY_best --epoch 78 --batchnorm --rep_dim 128 --fc_compress 256
+	python test_symnet_multi.py --data SUN --name SUN_best --epoch 95 --batchnorm --rep_dim 128 --fc_compress 1536
+
+
+
+Evaluation results on aPY and SUN (with metrics of mAUC)
+
+Model 				| aPY	 	| SUN 		|
+-- 					| -- 		| -- 		| 
+ALE 				| 69.2 		| 74.5  	|
+HAP 				| 58.2 		| 76.7		|
+UDICA 				| 82.3 		| 85.8		|
+KDICA 				| 84.7 		|	/		|
+UMF 				| 79.7 		| 80.5		|
+AMT 				| 84.5 		| 82.5  	|
+FMT 				| 70.5		| 75.5  	|
+GALM 				| 84.2 		| 86.5		|
+**SymNet (Ours)**	| **86.1**	| **88.4**  |
+
 
 
 ## Acknowledgement
