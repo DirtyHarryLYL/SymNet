@@ -1,6 +1,8 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
+#### **News**: (2022.03.28) We release the code of multiple attribute recognition mentioned in PAMI version
+
 #### **News**: (2022.02.14) We release the human body part state labels based on AVA: [HAKE-AVA](https://github.com/DirtyHarryLYL/HAKE-AVA).
 
 (2021.10.06) Our extended version of [SymNet](https://github.com/DirtyHarryLYL/SymNet) is accepted by TPAMI! Paper and code are coming soon.
@@ -13,11 +15,11 @@ As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
 This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2110.04603)
 
-**Symmetry and Group in Attribute-Object Compositions**. [[arXiv](https://arxiv.org/abs/2004.00587)]
+<!-- **Symmetry and Group in Attribute-Object Compositions**. [[arXiv](https://arxiv.org/abs/2004.00587)]
 *[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
 
 **Learning Single/Multi-Attribute of Object with Symmetry and Group**. [[arXiv](https://arxiv.org/abs/2110.04603)]
-*[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), [Xinyu Xu](https://xuxinyu.website) ,Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
+*[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), [Xinyu Xu](https://xuxinyu.website) ,Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)* -->
 
 ![Overview](./data/overview.png)
 
