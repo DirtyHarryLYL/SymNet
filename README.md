@@ -1,13 +1,21 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
-#### **News**: (2021.2.7) Upgraded [HAKE-Activity2Vec](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/Activity2Vec) is released! Images/Videos --> human box + ID + skeleton + part states + action + representation. [[Description]](https://drive.google.com/file/d/1iZ57hKjus2lKbv1MAB-TLFrChSoWGD5e/view?usp=sharing), Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1), [[bilibili]](https://www.bilibili.com/video/BV1s54y1Y76s)
+#### **News**: (2022.02.14) We release the human body part state labels based on AVA: [HAKE-AVA](https://github.com/DirtyHarryLYL/HAKE-AVA).
 
-(2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released!
+(2021.10.06) Our extended version of [SymNet](https://github.com/DirtyHarryLYL/SymNet) is accepted by TPAMI! Paper and code are coming soon.
 
-**(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!**
+(2021.2.7) Upgraded [HAKE-Activity2Vec](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/Activity2Vec) is released! Images/Videos --> human box + ID + skeleton + part states + action + representation. [[Description]](https://drive.google.com/file/d/1iZ57hKjus2lKbv1MAB-TLFrChSoWGD5e/view?usp=sharing), Full demo: [[YouTube]](https://t.co/hXiAYPXEuL?amp=1), [[bilibili]](https://www.bilibili.com/video/BV1s54y1Y76s)
 
+<<<<<<< HEAD
 This is the code accompanying following papers: 
+=======
+<!-- (2020.10.27) The code of [IDN](https://github.com/DirtyHarryLYL/HAKE-Action-Torch/tree/IDN-(Integrating-Decomposing-Network)) ([Paper](https://arxiv.org/abs/2010.16219)) in NeurIPS'20 is released! -->
+
+(2020.6.16) Our larger version [HAKE-Large](https://github.com/DirtyHarryLYL/HAKE#hake-large-for-instance-level-hoi-detection) (>120K images, activity and part state labels) is released!
+
+This is the code accompanying our CVPR'20 and TPAMI'21 papers: **Symmetry and Group in Attribute-Object Compositions** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2004.00587), **Learning Single/Multi-Attribute of Object with Symmetry and Group** [![report](https://img.shields.io/badge/ArXiv-Paper-red)](https://arxiv.org/abs/2110.04603)
+>>>>>>> e01d7303c8bf76fda2a0e7aa3d641114aac678cc
 
 **Symmetry and Group in Attribute-Object Compositions**. [[arXiv](https://arxiv.org/abs/2004.00587)]
 *[Yong-Lu Li](https://dirtyharrylyl.github.io/), [Yue Xu](https://silicx.github.io/), Xiaohan Mao, [Cewu Lu](http://mvig.sjtu.edu.cn/)*
@@ -18,22 +26,22 @@ This is the code accompanying following papers:
 ![Overview](./data/overview.png)
 
 If you find this repository useful for you, please consider citing our paper.
-
-	@inproceedings{li2020symmetry,
-		title={Symmetry and Group in Attribute-Object Compositions},
-		author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
-		booktitle={CVPR},
-		year={2020}
-	}
-	@ARTICLE{li2021learning,
-		author={Li, Yong-Lu and Xu, Yue and Xu, Xinyu and Mao, Xiaohan and Lu, Cewu},
-		journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
-		title={Learning Single/Multi-Attribute of Object with Symmetry and Group}, 
-		year={2021},
-		pages={1-1},
-		doi={10.1109/TPAMI.2021.3119406}
-	}
-
+```
+---SymNet-PAMI
+@article{li2021learning,
+  title={Learning Single/Multi-Attribute of Object with Symmetry and Group},
+  author={Li, Yong-Lu and Xu, Yue and Xu, Xinyu and Mao, Xiaohan and Lu, Cewu},
+  journal={TPAMI},
+  year={2021}
+}
+---SymNet-CVPR
+@inproceedings{li2020symmetry,
+	title={Symmetry and Group in Attribute-Object Compositions},
+	author={Li, Yong-Lu and Xu, Yue and Mao, Xiaohan and Lu, Cewu},
+	booktitle={CVPR},
+	year={2020}
+}
+```
 
 ## Prerequisites
 
@@ -149,11 +157,9 @@ Red Wine      | 2.9 | 7.3 | 11.8 | 2.4 | 5.7 | 9.3 | 20.7    | 17.9 | 11.6
 LabelEmbed+  | 3.0 | 7.6 | 12.2 | 2.0 | 5.6 | 9.4 | 15.0    | 20.1 | 10.7
 GenModel     | 3.1 | 6.9 | 10.5 | 2.3 | 5.7 | 8.8 | 24.8    | 13.4 | 11.2
 TMN               | 3.5 | 8.1 | 12.4 | 2.9 | 7.1 | 11.5| 20.2    | 20.1 | 13.0
-**SymNet (Updated)** | **5.4** | **11.6** | **16.6** | **4.5** | **10.1** | **15.0** | **25.9** | **25.7** | **16.1**
-<!--
-**SymNet (Ours)** | **4.3** | **9.8** | **14.8** | **3.0** | **7.6** | **12.3** | 24.4 | **25.2** | **16.1**
--->
-
+**SymNet (CVPR)** | **4.3** | **9.8** | **14.8** | **3.0** | **7.6** | **12.3** | 24.4 | **25.2** | **16.1**
+**SymNet (TPAMI)** | **5.4** | **11.6** | **16.6** | **4.5** | **10.1** | **15.0** | **26.2** | **26.3** | **16.8**
+**SymNet (Latest Update)** | **5.8** | **12.2** | **17.8** | **5.3** | **11.3** | **16.5** | **29.5** | **26.1** | **17.4**
 
 UT-Zappos evaluation results (with metrics of CAUSAL<sup>[3]</sup>)
 
@@ -198,6 +204,29 @@ FMT 				| 70.5		| 75.5  	|
 GALM 				| 84.2 		| 86.5		|
 **SymNet (Ours)**	| **86.1**	| **88.4**  |
 
+## Tips
+
+### Use Customized Dataset
+
+Take UT as example, beside reorganizing the images to `data/ut-zap50k-original/images/[attribute]_[object]/`:
+
+- If you are using customized pairs composed by our provided attributes and objects, only the pair lists in `data/ut-zap50k-original/compositional-split/` need to be updated.
+
+- If you also use customized attributes and objects, there are several additional files to modify in folder `utils/aux_data/`:
+
+  1. `UT_attrs.json` and `UT_objs.json` are attribute and object list, stored as `dict`. The keys are original names and values are names in pre-trained GloVe vocabs.
+
+  2. `glove_UT.py` contains GloVe vectors for the attributes and objects. In our paper, `glove.6B.300d.txt` is used.
+
+  3. `UT_weight.py` contains loss weights for each individual attribute or object class (only `attr_weight` and `obj_weight`) (`pair_weight` is never used and can be set to 1). In practice, these weights can help the training on imbalanced data. Each weight is computed by **-log(p)**, where **p** is the occurrence frequency of an attribute or object in train set. E.g. a five-image dataset have attribute labels `[a,a,a,b,b]`, then the `attr_weight` for `a` and `b` is `[-log0.6, -log0.4]`. You may clip the values to prevent large or zero weights.
+
+<!-- 
+## TODO
+- [ ] Unified backbone
+- [ ] Tips for hyperparameters and tuning
+- [ ] Some possible tricks
+- [ ] New module for multi-label attribute recognition
+- [ ] Torch version -->
 
 
 ## Acknowledgement
