@@ -55,7 +55,7 @@ If you find this repository useful for you, please consider citing our paper.
 
 
 For multiple attribute recognition, we re-organize the metadata of aPY/SUN datasets with pre-extracted ResNet-50 feature in 4 files `{APY/SUN}_{train/test}.pkl`.
-You can download them from [Link](https://drive.google.com/drive/folders/1qcgAeEeXakX3-RsFM3pKfKsj7F18XBHA?usp=sharing) and put them into `./data` folder.
+You can download them from [Link](https://drive.google.com/file/d/1xkdxbgBhE1S7HdeaUtn_8rtm5lE0Dx6z/view) and put them into `./data` folder.
 
 Pretrained models and intermediate results can be downloaded from here: [Link](https://drive.google.com/drive/folders/1qcgAeEeXakX3-RsFM3pKfKsj7F18XBHA?usp=sharing). Please unzip the `obj_scores.zip` to `./data/obj_scores` and `weights.zip` to `./weights`.
 
