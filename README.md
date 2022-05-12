@@ -3,7 +3,7 @@ As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
 #### **News**: (2022.03.28) We release the code of multiple attribute recognition mentioned in PAMI version
 
-#### **News**: (2022.02.14) We release the human body part state labels based on AVA: [HAKE-AVA](https://github.com/DirtyHarryLYL/HAKE-AVA).
+(2022.02.14) We release the human body part state labels based on AVA: [HAKE-AVA](https://github.com/DirtyHarryLYL/HAKE-AVA).
 
 (2021.10.06) Our extended version of [SymNet](https://github.com/DirtyHarryLYL/SymNet) is accepted by TPAMI! Paper and code are coming soon.
 
