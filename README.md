@@ -1,7 +1,9 @@
 # SymNet
 As a part of [HAKE](http://hake-mvig.cn/) project (HAKE-Object).
 
-#### **News**: (2022.12.7) We release a new project [OCL](https://mvig-rhos.com/ocl) ([paper](https://arxiv.org/abs/2212.02710)). Data and code are coming soon.
+#### **News**: (2022.12.19) HAKE 2.0 is accepted by TPAMI!
+
+(2022.12.7) We release a new project [OCL](https://mvig-rhos.com/ocl) ([paper](https://arxiv.org/abs/2212.02710)). Data and code are coming soon.
 
 (2022.11.19) We release the interactive object bounding boxes & classes in the interactions within AVA dataset (2.1 & 2.2)! [HAKE-AVA](https://github.com/DirtyHarryLYL/HAKE-AVA), [[Paper]](https://arxiv.org/abs/2211.07501).
 
